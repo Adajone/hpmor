@@ -114,15 +114,6 @@ jobs:
       - name: Make PDFs
         run: sh scripts/make_pdfs.sh > /dev/null
 
-      - name: Make eBooks
-        run: |
-          wget --quiet https://github.com/${{ github.repository }}/releases/latest/download/hpmor.html -O hpmor-prev.html
-          sh scripts/make_ebooks.sh
-
-      - name: Compare to previous hpmor.html
-        run: |
-          diff -U 0 -s hpmor-prev.html hpmor.html > hpmor-html-diff.log || :
-
       - name: ls after
         run: |
           pwd
@@ -133,11 +124,6 @@ jobs:
         with:
           name: ebooks
           path: |
-            ./hpmor-html-diff.log
-            ./hpmor.epub
-            ./hpmor.fb2
-            ./hpmor.html
-            ./hpmor.mobi
             ./hpmor.pdf
             ./hpmor*.pdf
           retention-days: 14
