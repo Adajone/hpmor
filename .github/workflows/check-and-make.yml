@@ -139,6 +139,7 @@ jobs:
             ./hpmor.html
             ./hpmor.mobi
             ./hpmor.pdf
+            ./hpmor*.pdf
           retention-days: 14
 
   #
