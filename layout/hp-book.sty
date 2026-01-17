@@ -8,7 +8,9 @@
 \DeclareOption{nocover}{\coverfalse}
 \ProcessOptions % process now as some are used immediately
 
-\documentclass[12pt,extrafontsizes,twoside,openright,final,msmallroyalvopaper]{memoir}
+\documentclass[12pt,extrafontsizes,twoside,openright,final]{memoir}
+\setstocksize{10in}{8in} % Set the paper size to 10" x 8"
+\settrimmedsize{10in}{8in}{*} % Set the trimmed size to match
 
 \input{layout/hp-header}
 
@@ -20,10 +22,10 @@
 % FIXME: Improve the layout: margins not perhaps as wide as the default, but
 % wider than currently. (The type block is currently the same as for the previous, larger paper.)
 %
-\settypeblocksize{\topskip + 34\baselineskip}{352pt}{*}
+\settypeblocksize{\topskip + 40\baselineskip}{497pt}{*}
 \setlrmargins{*}{*}{\hplrmargins}
-\setulmargins{*}{*}{1}
-\setheadfoot{\topskip +  \baselineskip}{2\baselineskip}
+\setulmargins{*}{*}{1.2}
+\setheadfoot{\topskip +  \baselineskip}{2.5\baselineskip}
 \checkandfixthelayout[fixed]
 
 
@@ -59,9 +61,9 @@
 	\renewcommand*{\chapnumfont}{\chapnamefont}
 	\renewcommand*{\chaptitlefont}{\hpfont\huge}
 
-	\setlength{\beforechapskip}{4\baselineskip plus 2\baselineskip minus 2\baselineskip }
+	\setlength{\beforechapskip}{5\baselineskip plus 2.5\baselineskip minus 2.5\baselineskip }
 	\setlength{\midchapskip}{0pt}
-	\setlength{\afterchapskip}{1\baselineskip}
+	\setlength{\afterchapskip}{1.5\baselineskip}
 
 	\renewcommand*{\printchapternum}{%
 		\chapnumfont \hyperref[contents]{\textls[30]{
@@ -98,6 +100,6 @@
 % Section
 %
 \setsecheadstyle{\scshape}
-\beforesecskip=1.5\baselineskip %        skip before the heading
-\aftersecskip=.5\baselineskip plus .5\baselineskip %         skip after the heading
+\beforesecskip=2\baselineskip %        skip before the heading
+\aftersecskip=.75\baselineskip plus .75\baselineskip %         skip after the heading
 \setsechook{\nopagebreak\vskip 0pt plus 3\baselineskip\setsecnumformat{}}
